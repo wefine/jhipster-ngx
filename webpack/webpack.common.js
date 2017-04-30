@@ -24,7 +24,7 @@ module.exports = function (options) {
         },
         module: {
             rules: [
-                { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports-loader?jQuery=jquery' },
+                {test: /bootstrap\/dist\/js\/umd\//, loader: 'imports-loader?jQuery=jquery'},
                 {
                     test: /\.ts$/,
                     loaders: [
@@ -39,9 +39,9 @@ module.exports = function (options) {
                     options: {
                         minimize: true,
                         caseSensitive: true,
-                        removeAttributeQuotes:false,
-                        minifyJS:false,
-                        minifyCSS:false
+                        removeAttributeQuotes: false,
+                        minifyJS: false,
+                        minifyCSS: false
                     },
                     exclude: ['./src/main/webapp/index.html']
                 },
@@ -80,12 +80,12 @@ module.exports = function (options) {
                 manifest: require(path.resolve('./target/www/vendor.json'))
             }),
             new CopyWebpackPlugin([
-                { from: './node_modules/core-js/client/shim.min.js', to: 'core-js-shim.min.js' },
-                { from: './node_modules/swagger-ui/dist', to: 'swagger-ui/dist' },
-                { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
-                { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
-                { from: './src/main/webapp/robots.txt', to: 'robots.txt' },
-                { from: './src/main/webapp/i18n', to: 'i18n' }
+                {from: './node_modules/core-js/client/shim.min.js', to: 'core-js-shim.min.js'},
+                {from: './node_modules/swagger-ui/dist', to: 'swagger-ui/dist'},
+                {from: './src/main/webapp/swagger-ui/', to: 'swagger-ui'},
+                {from: './src/main/webapp/favicon.ico', to: 'favicon.ico'},
+                {from: './src/main/webapp/robots.txt', to: 'robots.txt'},
+                {from: './src/main/webapp/i18n', to: 'i18n'}
             ]),
             new webpack.ProvidePlugin({
                 $: "jquery",
@@ -97,7 +97,7 @@ module.exports = function (options) {
                 inject: 'body'
             }),
             new AddAssetHtmlPlugin([
-                { filepath: path.resolve('./target/www/vendor.dll.js'), includeSourcemap: false }
+                {filepath: path.resolve('./target/www/vendor.dll.js'), includeSourcemap: false}
             ]),
             new StringReplacePlugin(),
             new WebpackNotifierPlugin({
