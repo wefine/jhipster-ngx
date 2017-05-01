@@ -1,0 +1,17 @@
+entity Repository {
+	groupId String,
+    artifactId String,
+    version String,
+    releaseAt String,
+    checkAt ZonedDateTime
+}
+
+// Set pagination options
+paginate Repository with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with ng4

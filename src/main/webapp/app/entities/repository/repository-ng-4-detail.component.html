@@ -1,0 +1,41 @@
+
+<div *ngIf="repository">
+    <h2><span jhiTranslate="tmsApp.repository.detail.title">Repository</span> {{repository.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="tmsApp.repository.groupId">Group Id</span></dt>
+        <dd>
+            <span>{{repository.groupId}}</span>
+        </dd>
+        <dt><span jhiTranslate="tmsApp.repository.artifactId">Artifact Id</span></dt>
+        <dd>
+            <span>{{repository.artifactId}}</span>
+        </dd>
+        <dt><span jhiTranslate="tmsApp.repository.version">Version</span></dt>
+        <dd>
+            <span>{{repository.version}}</span>
+        </dd>
+        <dt><span jhiTranslate="tmsApp.repository.releaseAt">Release At</span></dt>
+        <dd>
+            <span>{{repository.releaseAt}}</span>
+        </dd>
+        <dt><span jhiTranslate="tmsApp.repository.checkAt">Check At</span></dt>
+        <dd>
+            <span>{{repository.checkAt | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'repository-ng-4/'+ repository.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

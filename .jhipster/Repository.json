@@ -1,0 +1,32 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "groupId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "artifactId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "version",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "releaseAt",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checkAt",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170501085825",
+    "entityTableName": "repository",
+    "dto": "mapstruct",
+    "pagination": "infinite-scroll",
+    "service": "serviceImpl",
+    "angularJSSuffix": "ng4"
+}
